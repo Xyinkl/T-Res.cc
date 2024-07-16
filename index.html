@@ -772,5 +772,15 @@
 	<source src="speech.ogg" type="audio/mpeg">
 </audio>
 
+<script>
+	document.body.addEventListener('click', function() {
+		var audios = document.querySelectorAll('audio');
+		audios.forEach(function(audio) {
+			if (audio.paused) {
+				audio.play();
+			}
+		});
+	}, { once: true }); // 使用{ once: true }确保事件处理函数只执行一次
+	</script>
 </body>
 </html>
