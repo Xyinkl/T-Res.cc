@@ -2133,3 +2133,14 @@ h6 { font-size: 16px; }
 	.edrea_tm_modalbox .news_popup_details .news_main_title h3{font-size: 20px;}
 	.edrea_tm_modalbox .news_popup_details .news_main_title{margin-bottom: 18px;}	
 }
+
+.edrea_tm_section#copyright {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+	background-color: #fff;
+	padding: 20px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
