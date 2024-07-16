@@ -307,16 +307,9 @@ function edrea_tm_preloader() {
     "use strict";
     
     var preloader = $('#preloader');
-    var delayTime = isMobileDevice() ? 2000 : 2800; // 如果是移动设备，延迟时间为2000，否则为800
     
-    setTimeout(function() {
-        if (!isMobileDevice()) {
-            preloader.addClass('preloaded');
-        }
-        setTimeout(function() {
-            preloader.remove();
-        }, 3200); // 在非移动设备上，确保有足够的时间展示preloaded类的效果
-    }, delayTime);
+    preloader.remove();
+        
 }
 
 function edrea_tm_my_load() {
