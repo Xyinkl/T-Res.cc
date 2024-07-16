@@ -307,19 +307,16 @@ function edrea_tm_preloader(){
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	var preloader = $('#preloader');
 	
-	if (!isMobile) {
-		setTimeout(function() {
-			preloader.addClass('preloaded');
-		}, 800);
-		setTimeout(function() {
-			preloader.remove();
-		}, 2000);
-
-	} else {
-		setTimeout(function() {
-			preloader.remove();
-		}, 2000);
-	}
+	setTimeout(function() {
+        // For both mobile and non-mobile, add 'preloaded' class after 800ms
+        if (!isMobile) {
+            preloader.addClass('preloaded');
+        }
+        // Remove the preloader after 2000ms for all devices
+        setTimeout(function() {
+            preloader.remove();
+        }, 1200); // Adjusted to 1200ms to maintain the total 2000ms delay after the first timeout
+    }, 800);
 }
 
 // -----------------------------------------------------
