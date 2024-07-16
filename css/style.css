@@ -97,7 +97,7 @@ h6 { font-size: 16px; }
 	   -moz-box-sizing: border-box; /* Firefox, other Gecko */
 			box-sizing: border-box; /* Opera/IE 8+ */
 }
-#preloader{
+/* #preloader{
     position: fixed;
     left: 0;
     top: 0;
@@ -166,7 +166,7 @@ h6 { font-size: 16px; }
     -o-animation: lineround 1200ms linear 0s infinite;
     animation: lineround 1200ms linear 0s infinite;
     animation-delay: 2000ms;
-}
+} */
 
 @keyframes lineheight{
     0%{
