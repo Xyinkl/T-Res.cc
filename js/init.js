@@ -299,36 +299,31 @@ function edrea_tm_news_popup(){
 // -----------------------------------------------------
 // ---------------   PRELOADER   -----------------------
 // -----------------------------------------------------
-
-function edrea_tm_preloader(){
-	
-	"use strict";
-	
-	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
-	var preloader = $('#preloader');
-	
-	setTimeout(function() {
-        // For both mobile and non-mobile, add 'preloaded' class after 800ms
-        if (!isMobile) {
-            preloader.addClass('preloaded');
-        }
-        // Remove the preloader after 2000ms for all devices
-        setTimeout(function() {
-            preloader.remove();
-        }, 1200); // Adjusted to 1200ms to maintain the total 2000ms delay after the first timeout
-    }, 800);
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent);
 }
 
-// -----------------------------------------------------
-// -----------------   MY LOAD    ----------------------
-// -----------------------------------------------------
+function edrea_tm_preloader() {
+    "use strict";
+    
+    var preloader = $('#preloader');
+    var delayTime = isMobileDevice() ? 2000 : 800; // 如果是移动设备，延迟时间为2000，否则为800
+    
+    setTimeout(function() {
+        if (!isMobileDevice()) {
+            preloader.addClass('preloaded');
+        }
+        setTimeout(function() {
+            preloader.remove();
+        }, 1200); // 在非移动设备上，确保有足够的时间展示preloaded类的效果
+    }, delayTime);
+}
 
-function edrea_tm_my_load(){
-	
-	"use strict";
-	
-	var speed	= 500;
-	setTimeout(function(){edrea_tm_preloader();},speed);
+function edrea_tm_my_load() {
+    "use strict";
+    
+    var speed = 500;
+    setTimeout(edrea_tm_preloader, speed);
 }
 
 // -----------------------------------------------------
