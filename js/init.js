@@ -6,6 +6,8 @@
 
 jQuery(document).ready(function(){
 
+	"use strict";
+	
 	// here all ready functions
 	
 	edrea_tm_picker();
@@ -44,6 +46,8 @@ jQuery(document).ready(function(){
 
 function edrea_tm_picker(){
 	
+	"use strict";
+	
 	if(jQuery('.edrea_tm_settings').length){
 
 		// attach background for all colors
@@ -69,6 +73,8 @@ function edrea_tm_picker(){
 
 function edrea_tm_my_progress(){
 	
+	"use strict";
+	
 	jQuery('.progress_inner').each(function() {
 		var progress 		= jQuery(this);
 		var pValue 			= parseInt(progress.data('value'), 10);
@@ -85,6 +91,8 @@ function edrea_tm_my_progress(){
 // -----------------------------------------------------
 
 function edrea_tm_circular_progress(){
+	
+	"use strict";
 	
 	var circVal 		= 110;
 	
@@ -115,6 +123,7 @@ function edrea_tm_circular_progress(){
 // -----------------------------------------------------
 
 function edrea_tm_modalbox(){
+	"use strict";
 	
 	jQuery('.edrea_tm_all_wrap').prepend('<div class="edrea_tm_modalbox"><div class="box_inner"><div class="close"><a href="#"><i class="icon-cancel"></i></a></div><div class="description_wrap"></div></div></div>')
 }
@@ -124,6 +133,8 @@ function edrea_tm_modalbox(){
 // -----------------------------------------------------
 
 function edrea_tm_page_transition(){
+	
+	"use strict";
 	
 	var section 		= jQuery('.edrea_tm_section');
 	var allLi 			= jQuery('.transition_link li');
@@ -164,6 +175,8 @@ function edrea_tm_page_transition(){
 
 function edrea_tm_trigger_menu(){
 	
+	"use strict";
+
 	var hamburger 		= jQuery('.edrea_tm_topbar .trigger .hamburger');
 	var mobileMenu		= jQuery('.edrea_tm_mobile_menu');
 	var mobileMenuList	= jQuery('.edrea_tm_mobile_menu ul li a');
@@ -194,6 +207,8 @@ function edrea_tm_trigger_menu(){
 
 function edrea_tm_about_popup(){
 	
+	"use strict";
+	
 	var button			= jQuery('.edrea_tm_about .edrea_tm_button a');
 	var close			= jQuery('.edrea_tm_modalbox .close');
 	var modalBox		= jQuery('.edrea_tm_modalbox');
@@ -219,6 +234,8 @@ function edrea_tm_about_popup(){
 // -------------------------------------------------
 
 function edrea_tm_portfolio_popup(){
+	
+	"use strict";
 	
 	var modalBox		= jQuery('.edrea_tm_modalbox');
 	var button			= jQuery('.edrea_tm_portfolio .portfolio_popup');
@@ -252,6 +269,8 @@ function edrea_tm_portfolio_popup(){
 
 function edrea_tm_news_popup(){
 	
+	"use strict";
+	
 	var modalBox		= jQuery('.edrea_tm_modalbox');
 	var button			= jQuery('.edrea_tm_news .news_popup,.edrea_tm_news .news_list h3 a');
 	var closePopup		= modalBox.find('.close');
@@ -283,6 +302,8 @@ function edrea_tm_news_popup(){
 
 function edrea_tm_preloader(){
 	
+	"use strict";
+	
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	var preloader = $('#preloader');
 	
@@ -295,7 +316,9 @@ function edrea_tm_preloader(){
 		}, 2000);
 
 	} else {
-		preloader.remove();
+		setTimeout(function() {
+			preloader.remove();
+		}, 2000);
 	}
 }
 
@@ -304,6 +327,8 @@ function edrea_tm_preloader(){
 // -----------------------------------------------------
 
 function edrea_tm_my_load(){
+	
+	"use strict";
 	
 	var speed	= 500;
 	setTimeout(function(){edrea_tm_preloader();},speed);
@@ -315,22 +340,24 @@ function edrea_tm_my_load(){
 
 function edrea_tm_cursor(){
 	
+    "use strict";
+	
 	var myCursor	= jQuery('.mouse-cursor');
 	
 	if(myCursor.length){
 		if ($("body")) {
-		const e = document.querySelector(".cursor-inner"),
-			t = document.querySelector(".cursor-outer");
-		let n, i = 0,
-			o = !1;
-		window.onmousemove = function (s) {
-			o || (t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"), e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)", n = s.clientY, i = s.clientX
-		}, $("body").on("mouseenter", "a,.edrea_tm_topbar .trigger, .cursor-pointer", function () {
-			e.classList.add("cursor-hover"), t.classList.add("cursor-hover")
-		}), $("body").on("mouseleave", "a,.edrea_tm_topbar .trigger, .cursor-pointer", function () {
-			$(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"), t.classList.remove("cursor-hover"))
-		}), e.style.visibility = "visible", t.style.visibility = "visible"
-	}
+        const e = document.querySelector(".cursor-inner"),
+            t = document.querySelector(".cursor-outer");
+        let n, i = 0,
+            o = !1;
+        window.onmousemove = function (s) {
+            o || (t.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)"), e.style.transform = "translate(" + s.clientX + "px, " + s.clientY + "px)", n = s.clientY, i = s.clientX
+        }, $("body").on("mouseenter", "a,.edrea_tm_topbar .trigger, .cursor-pointer", function () {
+            e.classList.add("cursor-hover"), t.classList.add("cursor-hover")
+        }), $("body").on("mouseleave", "a,.edrea_tm_topbar .trigger, .cursor-pointer", function () {
+            $(this).is("a") && $(this).closest(".cursor-pointer").length || (e.classList.remove("cursor-hover"), t.classList.remove("cursor-hover"))
+        }), e.style.visibility = "visible", t.style.visibility = "visible"
+    }
 	}
 };
 
@@ -339,6 +366,8 @@ function edrea_tm_cursor(){
 // -----------------------------------------------------
 
 function edrea_tm_imgtosvg(){
+	
+	"use strict";
 	
 	jQuery('img.svg').each(function(){
 		
@@ -372,6 +401,8 @@ function edrea_tm_imgtosvg(){
 
 function edrea_tm_popup(){
 	
+	"use strict";
+
 	jQuery('.gallery_zoom').each(function() { // the containers for all your galleries
 		jQuery(this).magnificPopup({
 			delegate: 'a.zoom', // the selector for gallery item
@@ -409,6 +440,8 @@ function edrea_tm_popup(){
 
 function edrea_tm_data_images(){
 	
+	"use strict";
+	
 	var data			= jQuery('*[data-img-url]');
 	
 	data.each(function(){
@@ -423,6 +456,8 @@ function edrea_tm_data_images(){
 // -----------------------------------------------------
 
 function edrea_tm_contact_form(){
+	
+	"use strict";
 	
 	jQuery(".contact_form #send_message").on('click', function(){
 		
@@ -468,6 +503,8 @@ function edrea_tm_contact_form(){
 
  function edrea_tm_mycarousel(){
 	 
+	 "use strict";
+	 
 	 var carousel			= jQuery('.edrea_tm_modalbox .owl-carousel');
 	
 	carousel.owlCarousel({
@@ -497,6 +534,7 @@ function edrea_tm_contact_form(){
 // -----------------------------------------------------
 
 function hashtag(){
+	"use strict";
 	var ccc 			= $('.edrea_tm_header .menu .ccc');
 	var element 		= $('.edrea_tm_header .menu .active a');
 	$('.edrea_tm_header .menu a').on('mouseenter',function(){
@@ -513,6 +551,7 @@ function hashtag(){
 }
 
 function currentLink(ccc,e){
+	"use strict";
 	if(!e.length){return false;}
 	var left 		= e.offset().left;
 	var width		= e.outerWidth();
@@ -523,43 +562,6 @@ function currentLink(ccc,e){
 	
 }
 
-// -----------------------------------------------------
-// ---------------   SWIPER SLIDER    ------------------
-// -----------------------------------------------------
-
-function edrea_tm_swiper(){
-	
-	$('.swiper-section').each(function(){
-		var element 	= $(this);
-		var container 	= element.find('.swiper-container');
-		var mySwiper 	= new Swiper (container, {
-			loop: false,
-			slidesPerView: 1,
-			spaceBetween: 0,
-			loopAdditionalSlides: 1,
-			autoplay: {
-				delay: 6000,
-			},
-			
-			navigation: {
-				nextEl: '.my_next',
-				prevEl: '.my_prev',
-			  },
-			
-			pagination: {
-				el: '.edrea_tm_swiper_progress',
-				type: 'custom', // progressbar
-				renderCustom: function (swiper,current,total) {
-
-
-					// progress animation
-					var scale,translateX;
-					var progressDOM	= container.find('.edrea_tm_swiper_progress');
-					if(progressDOM.hasClass('fill')){
-						translateX 	= '0px';
-						scale		= parseInt((current/total)*100)/100;
-					}else{
-						scale 		= parseInt((1/total)*100)/100;
 // -----------------------------------------------------
 // ---------------   SWIPER SLIDER    ------------------
 // -----------------------------------------------------
