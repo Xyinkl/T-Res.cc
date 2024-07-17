@@ -2,47 +2,53 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
 
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<link rel="icon" type="image/png" href="img/favicon.png" />
+	<link rel="icon" type="image/png" href="img/favicon.png" />
 
-<meta name="description" content="欢迎来到天津RES的防丢页，仅以此纪念挂掉的QQ群。">
-<meta name="author" content="Xyikl">
+	<meta name="description" content="欢迎来到天津RES的防丢页，仅以此纪念挂掉的QQ群。">
+	<meta name="author" content="Xyikl">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-<title>Tianjin RES | Home</title>
+	<title>Tianjin RES | Home</title>
 
-<!-- STYLES -->
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<!-- STYLES -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+		rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
 
-<link rel="stylesheet" type="text/css" href="css/plugins.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
-<!-- /STYLES -->
+	<link rel="stylesheet" type="text/css" href="css/plugins.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!--[if lt IE 9]> <script type="text/javascript" src="js/modernizr.custom.js"></script> <![endif]-->
+	<!-- /STYLES -->
 
 </head>
 
-<body> 
-	
+<body>
+
 	<!-- PRELOADER -->
 	<div id="preloader">
 		<div class="loader_line"></div>
 	</div>
 	<!-- /PRELOADER -->
-	
+
 	<!-- WRAPPER ALL -->
-	<div class="edrea_tm_all_wrap" data-magic-cursor="show" data-enter="fadeInUp" data-exit=""> 	
-	
+	<div class="edrea_tm_all_wrap" data-magic-cursor="show" data-enter="fadeInUp" data-exit="">
+
 		<!-- WAVE DOTS -->
 		<div class="waves"></div>
 		<!-- WAVE DOTS -->
-		
+
 		<!-- SETTINGS -->
 		<div class="edrea_tm_settings">
 			<div class="icon">
@@ -73,7 +79,7 @@
 			</div>
 		</div>
 		<!-- /SETTINGS -->
-	
+
 		<!-- MOBILE MENU -->
 		<div class="edrea_tm_topbar">
 			<div class="topbar_inner">
@@ -103,7 +109,7 @@
 			</div>
 		</div>
 		<!-- /MOBILE MENU -->
-		
+
 		<!-- HEADER -->
 		<div class="edrea_tm_header">
 			<div class="header_inner">
@@ -122,17 +128,18 @@
 			</div>
 		</div>
 		<!-- /HEADER -->
-		
+
 		<!-- CONTENT -->
 		<div class="edrea_tm_content">
-		
+
 			<!-- HOME -->
 			<div class="edrea_tm_section animated" id="home">
 				<div class="section_inner">
 					<div class="edrea_tm_home">
 						<h3 class="name">Tianjin <span class="coloring">Resistance</span></h3>
 						<h3 class="job">
-							<span class="cd-headline rotate-1"> <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+							<span class="cd-headline rotate-1">
+								<!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
 								<span class="blc">Keep</span>
 								<span class="cd-words-wrapper">
 									<b class="is-visible">Moving</b>
@@ -140,17 +147,49 @@
 									<b>Linking</b>
 									<b>Exploring</b>
 								</span>
-								</span>
+							</span>
 							</span>
 						</h3>
-						<div class="edrea_tm_button transition_link">
-							<a href="#contact">Join Us</a>
+
+						<div class="edrea_tm_button transition_link" style="margin-top: 10px;">
+							<a id="agent-name" href="#">点我切换Agent</a>
 						</div>
+						<div style="margin-top: 100px;"><p id="agent-link" href="#" >点我切换Agent</p>
+							<p>点ID看Profile</p></div>
+
+
+						<script>
+							const agentLink = document.getElementById("agent-link");
+							const agentName = document.getElementById("agent-name");
+							const agents = [];
+
+							// Fetch the IDs from T-Res-Agents.txt
+							fetch("T-Res-Agents.txt")
+								.then((response) => response.text())
+								.then((data) => {
+									agents.push(...data.split("\n"));
+									showRandomAgent();
+								});
+
+							// Show a random agent ID
+							function showRandomAgent() {
+								const randomIndex = Math.floor(Math.random() * agents.length);
+								const randomAgent = agents[randomIndex];
+								agentName.innerText = randomAgent;
+								agentName.href = `https://link.ingress.com/?link=https%3a%2f%2fintel.ingress.com%2fagent%2f${randomAgent}`;
+
+								// agentLink.href = `https://link.ingress.com/?link=https%3a%2f%2fintel.ingress.com%2fagent%2f${randomAgent}`;
+							}
+
+							// Add event listener to the button for switching agents
+							agentLink.addEventListener("click", showRandomAgent);
+						</script>
+
 					</div>
 				</div>
 			</div>
 			<!-- /HOME -->
-			
+
 			<!-- ABOUT -->
 			<div class="edrea_tm_section" id="about">
 				<div class="section_inner">
@@ -165,8 +204,9 @@
 							<div class="short">
 								<h3 class="name">Tianjin <span class="coloring">Resistance</span></h3>
 								<h3 class="job">
-									<span class="cd-headline rotate-1"> <!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
-										<span class="blc">Keep  </span>
+									<span class="cd-headline rotate-1">
+										<!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
+										<span class="blc">Keep </span>
 										<span class="cd-words-wrapper">
 											<b class="is-visible">Moving</b>
 											<b>Capturing</b>
@@ -182,8 +222,12 @@
 								<h6 style="line-height: 2;">无论你身在何处，<b>T-Rex（霸王龙）</b></h6>
 								<h6 style="line-height: 2;">额不T-Res，都记得你</h6>
 
-								<h6 style="line-height: 2.7;">请你记住回家的路<span> <h2>T-res.cc</h2> </span></h6>
-								<p style="margin-top: 2em;">This website is not affiliated with Niantic and is solely for fan communication. All materials used on this website are sourced from the internet and are used for non-profit promotional purposes.</p>
+								<h6 style="line-height: 2.7;">请你记住回家的路<span>
+										<h2>T-res.cc</h2>
+									</span></h6>
+								<p style="margin-top: 2em;">This website is not affiliated with Niantic and is solely
+									for fan communication. All materials used on this website are sourced from the
+									internet and are used for non-profit promotional purposes.</p>
 
 							</div>
 							<!-- <div class="edrea_tm_button">
@@ -191,14 +235,14 @@
 							</div> -->
 
 							<!-- /About Popup Informations -->
-							
-							
+
+
 						</div>
 					</div>
 				</div>
 			</div>
 			<!-- /ABOUT -->
-			
+
 			<!-- PORTFOLIO -->
 			<div class="edrea_tm_section" id="portfolio">
 				<div class="section_inner">
@@ -221,8 +265,8 @@
 											</div>
 
 											<a class="edrea_tm_full_link portfolio_popup" href="#"></a>
-											
-											
+
+
 											<!-- Portfolio Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="portfolio_popup_details">
@@ -235,12 +279,14 @@
 																<div class="list_inner">
 																	<div class="image">
 																		<img src="img/thumbs/4-2.jpg" alt="" />
-																		<div class="main" data-img-url="img/portfolio/1-2.jpg"></div>
-																		<a class="edrea_tm_full_link zoom" href="img/portfolio/1-2.jpg"></a>
+																		<div class="main"
+																			data-img-url="img/portfolio/1-2.jpg"></div>
+																		<a class="edrea_tm_full_link zoom"
+																			href="img/portfolio/1-2.jpg"></a>
 																	</div>
 																</div>
 															</li>
-														
+
 														</ul>
 													</div>
 												</div>
@@ -262,8 +308,8 @@
 											</div>
 
 											<a class="edrea_tm_full_link portfolio_popup" href="#"></a>
-											
-											
+
+
 											<!-- Portfolio Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="portfolio_popup_details">
@@ -276,12 +322,14 @@
 																<div class="list_inner">
 																	<div class="image">
 																		<img src="img/thumbs/4-2.jpg" alt="" />
-																		<div class="main" data-img-url="img/portfolio/2-2.jpg"></div>
-																		<a class="edrea_tm_full_link zoom" href="img/portfolio/2-2.jpg"></a>
+																		<div class="main"
+																			data-img-url="img/portfolio/2-2.jpg"></div>
+																		<a class="edrea_tm_full_link zoom"
+																			href="img/portfolio/2-2.jpg"></a>
 																	</div>
 																</div>
 															</li>
-														
+
 														</ul>
 													</div>
 												</div>
@@ -304,13 +352,14 @@
 											</div>
 
 											<a class="edrea_tm_full_link portfolio_popup" href="#"></a>
-											
-											
+
+
 											<!-- Portfolio Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="portfolio_popup_details">
 													<div class="text">
-														<p>2024.7.5-6，天津第六次IFS在民园体育场🏟️举办，来自上海的@SSSunlight @Dongyunlong承办了本次ifs的组织准备</p>
+														<p>2024.7.5-6，天津第六次IFS在民园体育场🏟️举办，来自上海的@SSSunlight
+															@Dongyunlong承办了本次ifs的组织准备</p>
 													</div>
 													<div class="additional_images">
 														<ul class="gallery_zoom">
@@ -318,8 +367,10 @@
 																<div class="list_inner">
 																	<div class="image">
 																		<img src="img/thumbs/4-2.jpg" alt="" />
-																		<div class="main" data-img-url="img/portfolio/3-2.jpg"></div>
-																		<a class="edrea_tm_full_link zoom" href="img/portfolio/3-2.jpg"></a>
+																		<div class="main"
+																			data-img-url="img/portfolio/3-2.jpg"></div>
+																		<a class="edrea_tm_full_link zoom"
+																			href="img/portfolio/3-2.jpg"></a>
 																	</div>
 																</div>
 															</li>
@@ -328,8 +379,10 @@
 																<div class="list_inner">
 																	<div class="image">
 																		<img src="img/thumbs/4-2.jpg" alt="" />
-																		<div class="main" data-img-url="img/portfolio/3-3.jpg"></div>
-																		<a class="edrea_tm_full_link zoom" href="img/portfolio/3-3.jpg"></a>
+																		<div class="main"
+																			data-img-url="img/portfolio/3-3.jpg"></div>
+																		<a class="edrea_tm_full_link zoom"
+																			href="img/portfolio/3-3.jpg"></a>
 																	</div>
 																</div>
 															</li>
@@ -338,8 +391,10 @@
 																<div class="list_inner">
 																	<div class="image">
 																		<img src="img/thumbs/4-2.jpg" alt="" />
-																		<div class="main" data-img-url="img/portfolio/3-4.jpg"></div>
-																		<a class="edrea_tm_full_link zoom" href="img/portfolio/3-4.jpg"></a>
+																		<div class="main"
+																			data-img-url="img/portfolio/3-4.jpg"></div>
+																		<a class="edrea_tm_full_link zoom"
+																			href="img/portfolio/3-4.jpg"></a>
 																	</div>
 																</div>
 															</li>
@@ -348,12 +403,14 @@
 																<div class="list_inner">
 																	<div class="image">
 																		<img src="img/thumbs/4-2.jpg" alt="" />
-																		<div class="main" data-img-url="img/portfolio/3-5.jpg"></div>
-																		<a class="edrea_tm_full_link zoom" href="img/portfolio/3-5.jpg"></a>
+																		<div class="main"
+																			data-img-url="img/portfolio/3-5.jpg"></div>
+																		<a class="edrea_tm_full_link zoom"
+																			href="img/portfolio/3-5.jpg"></a>
 																	</div>
 																</div>
 															</li>
-														
+
 														</ul>
 													</div>
 												</div>
@@ -374,8 +431,8 @@
 												<span></span>
 											</div>
 											<a class="edrea_tm_full_link portfolio_popup" href="#"></a>
-											
-											
+
+
 											<!-- Portfolio Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="portfolio_popup_details">
@@ -388,20 +445,22 @@
 																<div class="list_inner">
 																	<div class="image">
 																		<img src="img/thumbs/4-2.jpg" alt="" />
-																		<div class="main" data-img-url="img/portfolio/4-2.jpg"></div>
-																		<a class="edrea_tm_full_link zoom" href="img/portfolio/4-2.jpg"></a>
+																		<div class="main"
+																			data-img-url="img/portfolio/4-2.jpg"></div>
+																		<a class="edrea_tm_full_link zoom"
+																			href="img/portfolio/4-2.jpg"></a>
 																	</div>
 																</div>
 															</li>
-															
+
 														</ul>
 													</div>
 												</div>
 											</div>
 											<!-- /Portfolio Popup Informations -->
-											
-											
-											
+
+
+
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -450,7 +509,7 @@
 				</div>
 			</div>
 			<!-- /PORTFOLIO -->
-			
+
 			<!-- NEWS -->
 			<div class="edrea_tm_section" id="news">
 				<div class="section_inner">
@@ -472,21 +531,34 @@
 												<h3><a href="#">Building brands through customer service</a></h3>
 												<span><a href="#">Branding</a></span>
 											</div>
-											
-											
+
+
 											<!-- News Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="news_popup_details">
 													<div class="text">
-														<p>Oki is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
-														<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
-														<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
+														<p>Oki is a leading web design agency with an award-winning
+															design team that creates innovative, effective websites that
+															capture your brand, improve your conversion rates, and
+															maximize your revenue to help grow your business and achieve
+															your goals.</p>
+														<p>In today’s digital world, your website is the first
+															interaction consumers have with your business. That's why
+															almost 95 percent of a user’s first impression relates to
+															web design. It’s also why web design services can have an
+															immense impact on your company’s bottom line.</p>
+														<p>That’s why more companies are not only reevaluating their
+															website’s design but also partnering with Kura, the web
+															design agency that’s driven more than $2.4 billion in
+															revenue for its clients. With over 50 web design awards
+															under our belt, we're confident we can design a custom
+															website that drives sales for your unique business.</p>
 													</div>
 												</div>
 											</div>
 											<!-- /News Popup Informations -->
-											
-											
+
+
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -500,21 +572,34 @@
 												<h3><a href="#">Unstoppable Jamstack and Gatsby opportunity</a></h3>
 												<span><a href="#">Design</a></span>
 											</div>
-											
-											
+
+
 											<!-- News Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="news_popup_details">
 													<div class="text">
-														<p>Oki is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
-														<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
-														<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
+														<p>Oki is a leading web design agency with an award-winning
+															design team that creates innovative, effective websites that
+															capture your brand, improve your conversion rates, and
+															maximize your revenue to help grow your business and achieve
+															your goals.</p>
+														<p>In today’s digital world, your website is the first
+															interaction consumers have with your business. That's why
+															almost 95 percent of a user’s first impression relates to
+															web design. It’s also why web design services can have an
+															immense impact on your company’s bottom line.</p>
+														<p>That’s why more companies are not only reevaluating their
+															website’s design but also partnering with Kura, the web
+															design agency that’s driven more than $2.4 billion in
+															revenue for its clients. With over 50 web design awards
+															under our belt, we're confident we can design a custom
+															website that drives sales for your unique business.</p>
 													</div>
 												</div>
 											</div>
 											<!-- /News Popup Informations -->
-											
-											
+
+
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -528,21 +613,34 @@
 												<h3><a href="#">Electron framework adds encryption API</a></h3>
 												<span><a href="#">Media</a></span>
 											</div>
-											
-											
+
+
 											<!-- News Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="news_popup_details">
 													<div class="text">
-														<p>Oki is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
-														<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
-														<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
+														<p>Oki is a leading web design agency with an award-winning
+															design team that creates innovative, effective websites that
+															capture your brand, improve your conversion rates, and
+															maximize your revenue to help grow your business and achieve
+															your goals.</p>
+														<p>In today’s digital world, your website is the first
+															interaction consumers have with your business. That's why
+															almost 95 percent of a user’s first impression relates to
+															web design. It’s also why web design services can have an
+															immense impact on your company’s bottom line.</p>
+														<p>That’s why more companies are not only reevaluating their
+															website’s design but also partnering with Kura, the web
+															design agency that’s driven more than $2.4 billion in
+															revenue for its clients. With over 50 web design awards
+															under our belt, we're confident we can design a custom
+															website that drives sales for your unique business.</p>
 													</div>
 												</div>
 											</div>
 											<!-- /News Popup Informations -->
-											
-											
+
+
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -556,21 +654,34 @@
 												<h3><a href="#">Sentry for JavaScript monitors release health</a></h3>
 												<span><a href="#">Technology</a></span>
 											</div>
-											
-											
+
+
 											<!-- News Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="news_popup_details">
 													<div class="text">
-														<p>Oki is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
-														<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
-														<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
+														<p>Oki is a leading web design agency with an award-winning
+															design team that creates innovative, effective websites that
+															capture your brand, improve your conversion rates, and
+															maximize your revenue to help grow your business and achieve
+															your goals.</p>
+														<p>In today’s digital world, your website is the first
+															interaction consumers have with your business. That's why
+															almost 95 percent of a user’s first impression relates to
+															web design. It’s also why web design services can have an
+															immense impact on your company’s bottom line.</p>
+														<p>That’s why more companies are not only reevaluating their
+															website’s design but also partnering with Kura, the web
+															design agency that’s driven more than $2.4 billion in
+															revenue for its clients. With over 50 web design awards
+															under our belt, we're confident we can design a custom
+															website that drives sales for your unique business.</p>
 													</div>
 												</div>
 											</div>
 											<!-- /News Popup Informations -->
-											
-											
+
+
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -584,21 +695,34 @@
 												<h3><a href="#">Five reasons to begin a Packt subscription</a></h3>
 												<span><a href="#">Lifestyle</a></span>
 											</div>
-											
-											
+
+
 											<!-- News Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="news_popup_details">
 													<div class="text">
-														<p>Oki is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
-														<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
-														<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
+														<p>Oki is a leading web design agency with an award-winning
+															design team that creates innovative, effective websites that
+															capture your brand, improve your conversion rates, and
+															maximize your revenue to help grow your business and achieve
+															your goals.</p>
+														<p>In today’s digital world, your website is the first
+															interaction consumers have with your business. That's why
+															almost 95 percent of a user’s first impression relates to
+															web design. It’s also why web design services can have an
+															immense impact on your company’s bottom line.</p>
+														<p>That’s why more companies are not only reevaluating their
+															website’s design but also partnering with Kura, the web
+															design agency that’s driven more than $2.4 billion in
+															revenue for its clients. With over 50 web design awards
+															under our belt, we're confident we can design a custom
+															website that drives sales for your unique business.</p>
 													</div>
 												</div>
 											</div>
 											<!-- /News Popup Informations -->
-											
-											
+
+
 										</div>
 									</div>
 									<div class="swiper-slide">
@@ -612,21 +736,34 @@
 												<h3><a href="#">Why developers are so divided over WordPress</a></h3>
 												<span><a href="#">Modern</a></span>
 											</div>
-											
-											
+
+
 											<!-- News Popup Informations -->
 											<div class="edrea_tm_hidden_content">
 												<div class="news_popup_details">
 													<div class="text">
-														<p>Oki is a leading web design agency with an award-winning design team that creates innovative, effective websites that capture your brand, improve your conversion rates, and maximize your revenue to help grow your business and achieve your goals.</p>
-														<p>In today’s digital world, your website is the first interaction consumers have with your business. That's why almost 95 percent of a user’s first impression relates to web design. It’s also why web design services can have an immense impact on your company’s bottom line.</p>
-														<p>That’s why more companies are not only reevaluating their website’s design but also partnering with Kura, the web design agency that’s driven more than $2.4 billion in revenue for its clients. With over 50 web design awards under our belt, we're confident we can design a custom website that drives sales for your unique business.</p>
+														<p>Oki is a leading web design agency with an award-winning
+															design team that creates innovative, effective websites that
+															capture your brand, improve your conversion rates, and
+															maximize your revenue to help grow your business and achieve
+															your goals.</p>
+														<p>In today’s digital world, your website is the first
+															interaction consumers have with your business. That's why
+															almost 95 percent of a user’s first impression relates to
+															web design. It’s also why web design services can have an
+															immense impact on your company’s bottom line.</p>
+														<p>That’s why more companies are not only reevaluating their
+															website’s design but also partnering with Kura, the web
+															design agency that’s driven more than $2.4 billion in
+															revenue for its clients. With over 50 web design awards
+															under our belt, we're confident we can design a custom
+															website that drives sales for your unique business.</p>
 													</div>
 												</div>
 											</div>
 											<!-- /News Popup Informations -->
-											
-											
+
+
 										</div>
 									</div>
 								</div>
@@ -649,7 +786,7 @@
 				</div>
 			</div>
 			<!-- /NEWS -->
-			
+
 			<!-- CONTACT -->
 			<div class="edrea_tm_section" id="contact">
 				<div class="section_inner">
@@ -663,38 +800,45 @@
 									<li>
 										<div class="list_inner">
 											<i class="icon-qq"></i>
-											<span><a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=nv380F3DNSUyWsNbI5OUz25dVB6122Kg&jump_from=webapi&authKey=LdnCP5SvmmtUO0jCj4qZpnAS7B56zNbX31jU6/He5Ef4Kjo1/e52gbB8gNLIslPF" >QQ主群 : 741033256</a></span>
+											<span><a target="_blank"
+													href="https://qm.qq.com/cgi-bin/qm/qr?k=nv380F3DNSUyWsNbI5OUz25dVB6122Kg&jump_from=webapi&authKey=LdnCP5SvmmtUO0jCj4qZpnAS7B56zNbX31jU6/He5Ef4Kjo1/e52gbB8gNLIslPF">QQ主群
+													: 741033256</a></span>
 										</div>
 									</li>
 									<li>
 										<div class="list_inner">
 											<i class="icon-telegram"></i>
-											<span><a href="https://t.me/TientsinResChat">电报群：t.me/TientsinResChat</a></span>
+											<span><a
+													href="https://t.me/TientsinResChat">电报群：t.me/TientsinResChat</a></span>
 										</div>
 									</li>
 									<li>
 										<div class="list_inner">
 											<i class="icon-telegram"></i>
-											<span><a href="https://t.me/TianjinResistance">新闻频道：t.me/TianjinResistance</a></span>
+											<span><a
+													href="https://t.me/TianjinResistance">新闻频道：t.me/TianjinResistance</a></span>
 										</div>
 									</li>
 									<li>
 										<div class="list_inner">
 											<i class="icon-instagram-1"></i>
-											<span><a href="https://www.instagram.com/adaexpedforce/">[AdaExpedForce] - ADA远征军 / INS频道</a></span>
+											<span><a href="https://www.instagram.com/adaexpedforce/">[AdaExpedForce] -
+													ADA远征军 / INS频道</a></span>
 										</div>
 									</li>
 									<li>
 										<div class="list_inner">
 											<i class="icon-vimeo"></i>
-											<span><a href="https://space.bilibili.com/86743306">[ADA_ExpLog-AEL] / B站</a></span>
+											<span><a href="https://space.bilibili.com/86743306">[ADA_ExpLog-AEL] /
+													B站</a></span>
 										</div>
 									</li>
 
 									<li>
 										<div class="list_inner">
 											<i class="icon-github"></i>
-											<span><a href="https://github.com/Xyinkl/T-Res.cc">[T-Res.cc] Github Repo / 欢迎提PR</a></span>
+											<span><a href="https://github.com/Xyinkl/T-Res.cc">[T-Res.cc] Github Repo /
+													欢迎提PR</a></span>
 										</div>
 									</li>
 
@@ -702,7 +846,7 @@
 							</div>
 							<div class="right">
 
-								<div >
+								<div>
 									<h6 style="line-height: 2.7;">2024年7月15日，存活8年有余的天蓝QQ群不幸被封</h6>
 									<h6 style="line-height: 2.7;">悟爆群之不谏，知来者之可追</h6>
 									<h6 style="line-height: 2.7;">于是，1天后</h6>
@@ -739,57 +883,54 @@
 
 										<!-- If you want change mail address to yours, just open "modal" folder >> contact.php and go to line 4 and change detail to yours.  -->
 
-									</form>
-								</div> -->
-							</div>
+								</form>
+							</div> -->
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- /CONTACT -->
-			
 		</div>
-		<!-- /CONTENT -->
-		
-		<!-- MAGIC CURSOR -->
-		<div class="mouse-cursor cursor-outer"></div>
-		<div class="mouse-cursor cursor-inner"></div>
-		<!-- /MAGIC CURSOR -->
+		<!-- /CONTACT -->
+
+	</div>
+	<!-- /CONTENT -->
+
+	<!-- MAGIC CURSOR -->
+	<div class="mouse-cursor cursor-outer"></div>
+	<div class="mouse-cursor cursor-inner"></div>
+	<!-- /MAGIC CURSOR -->
 
 	</div>
 	<!-- / WRAPPER ALL -->
-	
-<!-- SCRIPTS -->
 
-<!-- <script
+	<!-- SCRIPTS -->
+
+	<!-- <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script> -->
 
-<script src="js/jquery.js"></script>
-<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->	
-<script src="js/plugins.js"></script>
-<script src="js/init.js"></script>
-<!-- /SCRIPTS -->
+	<script src="js/jquery.js"></script>
+	<!--[if lt IE 10]> <script type="text/javascript" src="js/ie8.js"></script> <![endif]-->
+	<script src="js/plugins.js"></script>
+	<script src="js/init.js"></script>
+	<!-- /SCRIPTS -->
 
-<script>
-	document.body.addEventListener('click', function() {
-		var bgmAudio = new Audio('bgm.ogg');
-		var speechAudio = new Audio('speech.ogg');
-		
-		bgmAudio.play();
-		
-		setTimeout(function() {
-			speechAudio.play();
-		}, 3000);
-	}, { once: true });
-</script>
+	<script>
+		document.body.addEventListener('click', function () {
+			var bgmAudio = new Audio('bgm.ogg');
+			var speechAudio = new Audio('speech.ogg');
 
-<footer>
-	<div class="copyright">
-		<p>This website is not affiliated with Niantic. It is a fan-made promotion. All materials used are sourced from the internet and are not used for profit.</p>
-	</div>
-</footer>
+			bgmAudio.play();
+
+			setTimeout(function () {
+				speechAudio.play();
+			}, 3000);
+		}, {
+			once: true
+		});
+	</script>
 
 </body>
+
 </html>
