@@ -182,13 +182,19 @@
 								const randomIndex = Math.floor(Math.random() * agents.length);
 								const randomAgent = agents[randomIndex];
 								agentName.innerText = randomAgent;
-								agentName.href = `https://link.ingress.com/?link=https%3a%2f%2fintel.ingress.com%2fagent%2f${randomAgent}`;
+								agentName.href = `https://link.ingress.com/?link=https%3a%2f%2fintel.ingress.com%2fagent%2f${randomAgent}&apn=com.nianticproject.ingress&isi=576505181&ibi=com.google.ingress&ifl=https%3a%2f%2fapps.apple.com%2fapp%2fingress%2fid576505181&ofl=https%3a%2f%2fwww.ingress.com%2f`;
 
 								// agentLink.href = `https://link.ingress.com/?link=https%3a%2f%2fintel.ingress.com%2fagent%2f${randomAgent}`;
 							}
 
 							// Add event listener to the button for switching agents
 							agentLink.addEventListener("click", showRandomAgent);
+
+							agentName.addEventListener("click", function() {
+								window.location.href = this.href; // 使用window.location.href强制跳转
+							});
+
+
 						</script>
 
 					</div>
