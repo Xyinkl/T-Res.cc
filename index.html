@@ -138,7 +138,7 @@
 					<div class="edrea_tm_home">
 						<h3 class="name">Tianjin <span class="coloring">Resistance</span></h3>
 						<h3 class="job">
-							<span class="cd-headline rotate-1">
+							<span class="cd-headline push">
 								<!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
 								<span class="blc">Keep</span>
 								<span class="cd-words-wrapper">
@@ -212,19 +212,45 @@
 								<div class="main" data-img-url="img/about/1.jpg"></div>
 							</div>
 						</div>
+
 						<div class="right">
 							<div class="short">
 								<h3 class="name">Tianjin <span class="coloring">Resistance</span></h3>
 								<h3 class="job">
-									<span class="cd-headline rotate-1">
+									<span class="cd-headline push">
 										<!-- ANIMATE TEXT VALUES: zoom, rotate-1, letters type, letters rotate-2, loading-bar, slide, clip, letters rotate-3, letters scale, push,  -->
-										<span class="blc">Keep </span>
+										<h4 id="randAgent"> Agent </h4><span class="blc"> Keep </span>
+										
 										<span class="cd-words-wrapper">
-											<b class="is-visible">Moving</b>
+											<b class="is-visible" id="RandAction">Moving</b>
 											<b>Capturing</b>
 											<b>Linking</b>
 											<b>Exploring</b>
 										</span>
+
+										<script>
+											const randAgentSpan = document.getElementById("randAgent");
+											const AgentList = [];
+
+											// Fetch the IDs from T-Res-Agents.txt
+											fetch("T-Res-Agents.txt")
+												.then((response) => response.text())
+												.then((data) => {
+													AgentList.push(...data.split("\n").map(agent => agent.replace(/\r/g, "")));
+													showRandomAgent();
+													setInterval(showRandomAgent, 1000);
+												});
+
+											// Show a random agent ID
+											function showRandomAgent() {
+												const randomIndex = Math.floor(Math.random() * AgentList.length);
+												const randomAgent = AgentList[randomIndex];
+												randAgentSpan.innerText = randomAgent.replace(/<br>/g, "");
+												// console.log(randomAgent)
+											}
+										</script>
+
+										
 									</span>
 								</h3>
 							</div>
