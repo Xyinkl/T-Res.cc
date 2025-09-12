@@ -1,4 +1,72 @@
-﻿@charset "utf-8";
+﻿/* 增加 header 和 content 间距 */
+.edrea_tm_header {
+	margin-bottom: 30px;
+}
+/* 固定图片展示区域样式 */
+.portfolio_fixed {
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	display: flex;
+	gap: 15px;
+	margin-bottom: 6px;
+}
+.portfolio_fixed .list_inner {
+	width: 100%;
+	height: auto;
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.portfolio_fixed .image {
+	position: relative;
+	overflow: hidden;
+}
+.portfolio_fixed .image img {
+	position: relative;
+	min-width: 100%;
+	opacity: 0;
+}
+.portfolio_fixed .image .main {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-repeat: no-repeat;
+	background-position:center;
+	background-size: cover;
+	transform: scale(1)translateZ(0);
+	transition: all .3s ease;
+}
+.portfolio_fixed .details {
+	position: absolute;
+	z-index: 2;
+	bottom: -100px;
+	left: 20px;
+	background-color: #fff;
+	padding: 10px 20px 10px 20px;
+	box-shadow: 0px 0px 20px rgba(0,0,0,.2);
+	border-radius: 5px;
+	transition: all .3s ease;
+}
+.portfolio_fixed .details h3 {
+	color: #000;
+	font-size: 15px;
+	margin-bottom: 2px;
+}
+.portfolio_fixed .details span {
+	color: #777;
+	font-size: 14px;
+}
+.portfolio_fixed .list_inner:hover .details {
+	bottom: 20px;
+}
+.portfolio_fixed .list_inner:hover .image .main {
+	transform: scale(1.1)translateZ(0);
+}
+@charset "utf-8";
 
 /*
 /*	Copyright (c) 2022 Marketify
@@ -380,8 +448,8 @@ h6 { font-size: 16px; }
 .edrea_tm_content{
 	position: fixed;
 	width: 900px;
-	top: 100px;
-	bottom: 100px;
+	top: 160px;
+	bottom: 10px;
 	left: 50%;
 	transform: translateX(-50%);
 }
@@ -1266,7 +1334,7 @@ h6 { font-size: 16px; }
 	height: auto;
 	clear: both;
 	float: left;
-	padding-top: 60px;
+	padding-top: 18px;
 }
 .edrea_tm_portfolio .portfolio_list .list_inner{
 	width: 100%;
@@ -1348,7 +1416,7 @@ h6 { font-size: 16px; }
 	align-items: center;
 	justify-content: space-between;
 	clear: both;
-	margin-top: 32px;
+	margin-top: 16px;
 }
 .edrea_tm_swiper_progress .my_pagination_in{
 	float: left;
@@ -1370,6 +1438,7 @@ h6 { font-size: 16px; }
 }
 .edrea_tm_swiper_progress .pagination_progress .all{
 	height: 1px;
+	margin-bottom: 20px;
 	width: 100%;
 	position: absolute;
 	z-index: 5;
