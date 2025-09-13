@@ -55,7 +55,18 @@
 				<a class="link" href="#"></a>
 			</div>
 			<div class="wrapper">
-				<span class="title">T-Res-Agent List</span>
+				<div>
+					<span class="title"> T-Res Agents [ <span id="agent-count">0</span> ] </span>
+				</div>
+				<script>
+					// 统计Agent总数并显示
+					fetch("T-Res-Agents.txt")
+						.then(response => response.text())
+						.then(data => {
+							const count = data.split("\n").map(a => a.trim()).filter(a => a).length;
+							document.getElementById("agent-count").textContent = count;
+						});
+				</script>
 				<div style="max-height: 240px; overflow-y: hidden; position: relative;"></div>
 				<ul id="agent-list" style="font-family: monospace; font-size: 1em; line-height: 2; margin:0; padding:0; list-style:none; transition: transform 0.5s;">
 					<li>Loading...</li>
@@ -179,11 +190,43 @@
 						</div> -->
 
 						<div class="edrea_tm_button transition_link">
-							<a id="agent-name" href="#">Xyinkl</a>
+							<a id="agent-name" href="#">Loading...</a>
 						</div>
-						<div style="margin-top: 100px;">
-							<p id="agent-link">点我切换Agent</p>
-							<p>点ID看Profile</p>
+						<div style="margin-top: 10px;">
+							<span id="agent-switch" style="cursor:pointer; font-size:1em; line-height:1.7; color:inherit; text-decoration:none; font-family:inherit; margin-top:10px; display:inline-block;">点我切换AgentID</span></div>
+						<script>
+						let agentList = [];
+						const agentName = document.getElementById("agent-name");
+						const agentSwitch = document.getElementById("agent-switch");
+
+						// 加载Agent列表
+						fetch("T-Res-Agents.txt")
+							.then((response) => response.text())
+							.then((data) => {
+								agentList = data.split("\n").map(a => a.trim()).filter(a => a);
+								setRandomAgent();
+							});
+
+						function setRandomAgent() {
+							if (agentList.length === 0) return;
+							const randomIndex = Math.floor(Math.random() * agentList.length);
+							const randomAgent = agentList[randomIndex];
+							agentName.innerText = randomAgent;
+							agentName.href = `https://link.ingress.com/?link=https%3a%2f%2fintel.ingress.com%2fagent%2f${randomAgent}&apn=com.nianticproject.ingress&isi=576505181&ibi=com.google.ingress&ifl=https%3a%2f%2fapps.apple.com%2fapp%2fingress%2fid576505181&ofl=https%3a%2f%2fwww.ingress.com%2f`;
+						}
+
+						agentSwitch.addEventListener("click", function() {
+							setRandomAgent();
+						});
+
+						agentName.addEventListener("click", function(e) {
+							e.preventDefault();
+							window.location.href = this.href;
+						});
+						</script>
+							<div >
+								<p>点ID跳转Profile[限移动端]</p>
+								<p>AgentList——右侧齿轮</p>
 						</div>
 
 						<script>
