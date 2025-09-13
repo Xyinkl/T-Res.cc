@@ -48,7 +48,6 @@
 		<!-- WAVE DOTS -->
 		<div class="waves"></div>
 		<!-- WAVE DOTS -->
-
 		<!-- SETTINGS -->
 		<div class="edrea_tm_settings">
 			<div class="icon">
@@ -56,27 +55,50 @@
 				<a class="link" href="#"></a>
 			</div>
 			<div class="wrapper">
-				<span class="title">换个颜色试试？</span>
-				<ul class="colors">
-					<li><a href="#" data-color="#4169e1"></a></li>
-					<li><a href="#" data-color="#66B95C"></a></li>
-					<li><a href="#" data-color="#ff9800"></a></li>
-					<li><a href="#" data-color="#ff5e94"></a></li>
-					<li><a href="#" data-color="#fa5b0f"></a></li>
-					<li><a href="#" data-color="#f39977"></a></li>
-					<li><a href="#" data-color="#9200ee"></a></li>
-					<li><a href="#" data-color="#00D4BD"></a></li>
-					<li><a href="#" data-color="#5e9e9f"></a></li>
-					<li><a href="#" data-color="#EB4A4C"></a></li>
-					<li><a href="#" data-color="#666d41"></a></li>
-					<li><a href="#" data-color="#fe0000"></a></li>
+				<span class="title">T-Res-Agent List</span>
+				<div style="max-height: 240px; overflow-y: hidden; position: relative;"></div>
+				<ul id="agent-list" style="font-family: monospace; font-size: 1em; line-height: 2; margin:0; padding:0; list-style:none; transition: transform 0.5s;">
+					<li>Loading...</li>
 				</ul>
-				<span class="title">指针也可以换</span>
-				<ul class="cursor">
-					<li><a class="showme show" href="#"></a></li>
-					<li><a class="hide" href="#"><img class="svg" src="img/arrow.svg" alt="" /></a></li>
-				</ul>
+				<script>
+					let agents = [];
+					const ul = document.getElementById("agent-list");
+					const pageSize = 12;
+					let pageIndex = 0;
+
+					function renderList() {
+						ul.innerHTML = "";
+						if (agents.length === 0) return;
+						const start = pageIndex * pageSize;
+						const pageAgents = agents.slice(start, start + pageSize);
+						pageAgents.forEach(agent => {
+							const li = document.createElement("li");
+							li.textContent = agent;
+							ul.appendChild(li);
+						});
+						pageIndex = (pageIndex + 1) % Math.ceil(agents.length / pageSize);
+					}
+
+					fetch("T-Res-Agents.txt")
+						.then(response => response.text())
+						.then(data => {
+							agents = data.split("\n").map(a => a.trim()).filter(a => a);
+							renderList();
+							setInterval(renderList, 2000);
+						});
+				</script>
+				<div style="margin-top: 1em;">
+					<span class="title">如何加入？</span>
+					<p style="font-size:1em;line-height:1.7;">
+						联系 <a href="https://t.me/Xyinkl" target="_blank" style="color: #fff;"> Xyinkl</a>
+						或者自行给 <a href="https://github.com/Xyinkl/T-Res.cc" target="_blank" style="color: #fff;">https://github.com/Xyinkl/T-Res.cc</a> 提PR都可。<br>
+						。
+					</p>
+				</div>
 			</div>
+			<style>
+				.edrea_tm_settings a { color: #fff !important; }
+			</style>
 		</div>
 		<!-- /SETTINGS -->
 
